@@ -16,9 +16,9 @@ def main():
     while True:
         ret, frame = cap.read()
         grayImage = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        # for i in range(width-1):
-        #     for j in range(height-1):
-        #         grayImage[j,i]-=200
+        for i in range(width-1):
+            for j in range(height-1):
+                grayImage[j,i]-=200
         # grayImage=255-grayImage
         # img = grayImage
         gray = img = grayImage #cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
