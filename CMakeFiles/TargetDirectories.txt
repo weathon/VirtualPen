@@ -1,0 +1,3 @@
+/home/wayne/VirtualPen/CMakeFiles/rebuild_cache.dir
+/home/wayne/VirtualPen/CMakeFiles/edit_cache.dir
+/home/wayne/VirtualPen/CMakeFiles/demo.dir

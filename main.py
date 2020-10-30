@@ -7,3 +7,4 @@ cv2.imshow("gray",grayImage)
 cv2.waitKey(0)
 cv2.imwrite("out.jpg", grayImage) 
 # fan guolai? zhi you da mian ji bai se cia? ji yi?fang zhi shan shuo?
+
