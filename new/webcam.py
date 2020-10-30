@@ -23,18 +23,18 @@ def main():
         # img = grayImage
         gray = img = grayImage #cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
         # ret,gray = cv2.threshold(gray,150,200,200)
-        ret,gray = cv2.threshold(gray,np.mean(gray),255,cv2.THRESH_BINARY)
+        ret,gray = cv2.threshold(gray,np.mean(gray)*0.75,255,cv2.THRESH_BINARY)
         gray2 = gray.copy()
         mask = np.zeros(gray.shape,np.uint8)
 
         contours, hier = cv2.findContours(gray,cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)
         for cnt in contours:
-            if 20<cv2.contourArea(cnt)<100:
+            if 0<cv2.contourArea(cnt)<100:
                 cv2.drawContours(img,[cnt],0,(0,255,0),2)
                 cv2.drawContours(mask,[cnt],0,255,-1)
                 
         # https://stackoverflow.com/questions/10262600/how-to-detect-region-of-large-of-white-pixels-using-opencv
-        cv2.imshow("Capturing",gray2)
+        cv2.imshow("Capturing",img)
         cv2.resizeWindow("Capturing",600,600)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
